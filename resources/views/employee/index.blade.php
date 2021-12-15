@@ -9,9 +9,9 @@
 <body>
 <h1>Mon employee</h1>
 <ul>
-    <li>{{$employee->first_name}}</li>
-    <li>{{$employee->last_name}}</li>
-    <li>{{$employee->email}}</li>
+    <li>{{ $employee->first_name }}</li>
+    <li>{{ $employee->last_name }}</li>
+    <li>{{ $employee->email }}</li>
 </ul>
 </body>
 </html>

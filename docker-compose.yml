@@ -35,6 +35,20 @@ services:
         networks:
             - default
 
+    adminer:
+        image: clue/adminer
+        container_name: laravel_employee_adminer
+        links:
+            - db
+        expose:
+            - "80"
+        environment:
+            # Add adminer URI in your /etc/host file
+            VIRTUAL_HOST: 'adminer.laravel.test'
+        networks:
+            - default
+            - proxy
+
 networks:
     proxy:
         external: true
