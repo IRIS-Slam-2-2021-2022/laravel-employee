@@ -11,6 +11,9 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find(100);
 
+        // Identique à
+        // $employee = Employee::where('employee_id', 100)->first();
+
         return view('employee.index', ['employee' => $employee]);
     }
 
