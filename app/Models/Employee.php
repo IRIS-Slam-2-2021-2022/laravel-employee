@@ -18,6 +18,18 @@ class Employee extends Model
      */
     public $timestamps = false;
 
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'hire_date',
+        'job_id',
+        'salary',
+        'department_id',
+    ];
+
+
+
     public function department()
     {
         return $this->belongsTo(Department::class, 'department_id');

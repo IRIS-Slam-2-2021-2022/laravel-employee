@@ -28,10 +28,14 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
-        $employee = new Employee();
-        $employee->last_name = $request->request->get('last_name');
-        $employee->save();
+        if ($request->getMethod() === "POST") {
+            $employee = new Employee();
+            $employee->fill($request->request->all());
+            $employee->save();
+        }
 
-        return view('employee.store');
+        $departments = Department::all();
+
+        return view('employee.store', ['departments' => $departments]);
     }
 }
