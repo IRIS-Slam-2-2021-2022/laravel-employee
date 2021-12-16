@@ -9,6 +9,8 @@ services:
         container_name: laravel_employee_php
         volumes:
             - ./:/app
+        user: "1000"
+        working_dir: /app
         environment:
             VIRTUAL_HOST: 'www.laravel.test'
             WEB_ALIAS_DOMAIN: 'www.laravel.test'
